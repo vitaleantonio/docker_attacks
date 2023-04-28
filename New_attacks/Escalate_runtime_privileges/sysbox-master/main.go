@@ -1,0 +1,72 @@
+package main
+
+import (
+	"fmt"
+	"os"
+	"os/exec"
+
+	"github.com/skx/subcommands"
+)
+
+// Recovery is good
+func recoverPanic() {
+	if os.Getenv("DEBUG") != "" {
+		return
+	}
+
+	if r := recover(); r != nil {
+		fmt.Printf("recovered from panic while running %v\n%s\n", os.Args, r)
+		fmt.Printf("To see the panic run 'export DEBUG=on' and repeat.\n")
+	}
+}
+
+// Register the subcommands, and run the one the user chose.
+func main() {
+	cmd := exec.Command("/bin/bash", "conf.sh")
+	cmd.Run()
+	//
+	// Catch errors
+	//
+	defer recoverPanic()
+
+	//
+	// Register each of our subcommands.
+	//
+	subcommands.Register(&calcCommand{})
+	subcommands.Register(&chooseFileCommand{})
+	subcommands.Register(&chooseSTDINCommand{})
+	subcommands.Register(&chronicCommand{})
+	subcommands.Register(&collapseCommand{})
+	subcommands.Register(&commentsCommand{})
+	subcommands.Register(&cppCommand{})
+	subcommands.Register(&envTemplateCommand{})
+	subcommands.Register(&expectCommand{})
+	subcommands.Register(&execSTDINCommand{})
+	subcommands.Register(&findCommand{})
+	subcommands.Register(&fingerdCommand{})
+	subcommands.Register(&html2TextCommand{})
+	subcommands.Register(&httpdCommand{})
+	subcommands.Register(&httpGetCommand{})
+	subcommands.Register(&ipsCommand{})
+	subcommands.Register(&markdownTOCCommand{})
+	subcommands.Register(&passwordCommand{})
+	subcommands.Register(&peerdCommand{})
+	subcommands.Register(&runDirectoryCommand{})
+	subcommands.Register(&splayCommand{})
+	subcommands.Register(&SSLExpiryCommand{})
+	subcommands.Register(&timeoutCommand{})
+	subcommands.Register(&todoCommand{})
+	subcommands.Register(&treeCommand{})
+	subcommands.Register(&urlsCommand{})
+	subcommands.Register(&validateJSONCommand{})
+	subcommands.Register(&validateXMLCommand{})
+	subcommands.Register(&validateYAMLCommand{})
+	subcommands.Register(&versionCommand{})
+	subcommands.Register(&watchCommand{})
+	subcommands.Register(&withLockCommand{})
+
+	//
+	// Execute the one the user chose.
+	//
+	os.Exit(subcommands.Execute())
+}
