@@ -7,7 +7,7 @@ Setting "--network host" as sensitive parameter the host network is shared with 
 
 ### Build
 ```
-docker build -t my-nmap
+docker build -t my-nmap .
 ```
 ### How to run
 ```
