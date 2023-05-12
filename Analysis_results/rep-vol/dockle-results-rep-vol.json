@@ -1,0 +1,80 @@
+{
+  "image": "rep-vol",
+  "summary": {
+    "fatal": 2,
+    "warn": 2,
+    "info": 3,
+    "skip": 0,
+    "pass": 9
+  },
+  "details": [
+    {
+      "code": "CIS-DI-0009",
+      "title": "Use COPY instead of ADD in Dockerfile",
+      "level": "FATAL",
+      "alerts": [
+        "Use COPY : /bin/sh -c #(nop) ADD file:20f2ff22b9a8ca9bec5178036c9ebc525a12cd4312daf5d14a9a631a30be20e1 in / "
+      ]
+    },
+    {
+      "code": "DKL-DI-0005",
+      "title": "Clear apt-get caches",
+      "level": "FATAL",
+      "alerts": [
+        "Use 'rm -rf /var/lib/apt/lists' after 'apt-get install|update' : |1 VERSION= /bin/sh -c apt-get update  \u0026\u0026 apt-get install --no-install-recommends -y  jpegoptim optipng zip"
+      ]
+    },
+    {
+      "code": "CIS-DI-0001",
+      "title": "Create a user for the container",
+      "level": "WARN",
+      "alerts": [
+        "Last user should not be root"
+      ]
+    },
+    {
+      "code": "DKL-DI-0006",
+      "title": "Avoid latest tag",
+      "level": "WARN",
+      "alerts": [
+        "Avoid 'latest' tag"
+      ]
+    },
+    {
+      "code": "CIS-DI-0005",
+      "title": "Enable Content trust for Docker",
+      "level": "INFO",
+      "alerts": [
+        "export DOCKER_CONTENT_TRUST=1 before docker pull/build"
+      ]
+    },
+    {
+      "code": "CIS-DI-0006",
+      "title": "Add HEALTHCHECK instruction to the container image",
+      "level": "INFO",
+      "alerts": [
+        "not found HEALTHCHECK statement"
+      ]
+    },
+    {
+      "code": "CIS-DI-0008",
+      "title": "Confirm safety of setuid/setgid files",
+      "level": "INFO",
+      "alerts": [
+        "setgid file: grwxr-xr-x usr/bin/expiry",
+        "setgid file: grwxr-xr-x usr/bin/wall",
+        "setuid file: urwxr-xr-x usr/bin/newgrp",
+        "setuid file: urwxr-xr-x usr/bin/mount",
+        "setuid file: urwxr-xr-x usr/bin/chsh",
+        "setuid file: urwxr-xr-x usr/bin/gpasswd",
+        "setuid file: urwxr-xr-x usr/bin/umount",
+        "setuid file: urwxr-xr-x usr/bin/chfn",
+        "setuid file: urwxr-xr-x usr/bin/passwd",
+        "setgid file: grwxr-xr-x usr/bin/chage",
+        "setuid file: urwxr-xr-x usr/bin/su",
+        "setgid file: grwxr-xr-x usr/sbin/pam_extrausers_chkpwd",
+        "setgid file: grwxr-xr-x usr/sbin/unix_chkpwd"
+      ]
+    }
+  ]
+}

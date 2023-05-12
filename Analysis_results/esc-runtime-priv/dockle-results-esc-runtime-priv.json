@@ -1,0 +1,94 @@
+{
+  "image": "esc-runtime-priv",
+  "summary": {
+    "fatal": 2,
+    "warn": 2,
+    "info": 4,
+    "skip": 0,
+    "pass": 8
+  },
+  "details": [
+    {
+      "code": "CIS-DI-0009",
+      "title": "Use COPY instead of ADD in Dockerfile",
+      "level": "FATAL",
+      "alerts": [
+        "Use COPY : /bin/sh -c #(nop) ADD file:20f2ff22b9a8ca9bec5178036c9ebc525a12cd4312daf5d14a9a631a30be20e1 in / "
+      ]
+    },
+    {
+      "code": "DKL-DI-0005",
+      "title": "Clear apt-get caches",
+      "level": "FATAL",
+      "alerts": [
+        "Use 'rm -rf /var/lib/apt/lists' after 'apt-get install|update' : /bin/sh -c apt-get update \u0026\u0026     apt-get install -y build-essential curl stress"
+      ]
+    },
+    {
+      "code": "CIS-DI-0001",
+      "title": "Create a user for the container",
+      "level": "WARN",
+      "alerts": [
+        "Last user should not be root"
+      ]
+    },
+    {
+      "code": "DKL-DI-0006",
+      "title": "Avoid latest tag",
+      "level": "WARN",
+      "alerts": [
+        "Avoid 'latest' tag"
+      ]
+    },
+    {
+      "code": "CIS-DI-0005",
+      "title": "Enable Content trust for Docker",
+      "level": "INFO",
+      "alerts": [
+        "export DOCKER_CONTENT_TRUST=1 before docker pull/build"
+      ]
+    },
+    {
+      "code": "CIS-DI-0006",
+      "title": "Add HEALTHCHECK instruction to the container image",
+      "level": "INFO",
+      "alerts": [
+        "not found HEALTHCHECK statement"
+      ]
+    },
+    {
+      "code": "CIS-DI-0008",
+      "title": "Confirm safety of setuid/setgid files",
+      "level": "INFO",
+      "alerts": [
+        "setuid file: urwxr-xr-x usr/bin/chfn",
+        "setuid file: urwxr-xr-x usr/bin/mount",
+        "setgid file: grwxr-xr-x usr/bin/chage",
+        "setuid file: urwxr-xr-x usr/bin/su",
+        "setuid file: urwxr-xr-x usr/bin/gpasswd",
+        "setuid file: urwxr-xr-x usr/bin/passwd",
+        "setuid file: urwxr-xr-x usr/bin/umount",
+        "setuid file: urwxr-xr-x usr/bin/chsh",
+        "setgid file: grwxr-xr-x usr/bin/wall",
+        "setgid file: grwxr-xr-x usr/sbin/unix_chkpwd",
+        "setuid file: urwxr-xr-x usr/bin/newgrp",
+        "setgid file: grwxr-xr-x usr/sbin/pam_extrausers_chkpwd",
+        "setgid file: grwxr-xr-x usr/bin/expiry"
+      ]
+    },
+    {
+      "code": "DKL-LI-0003",
+      "title": "Only put necessary files",
+      "level": "INFO",
+      "alerts": [
+        "unnecessary file : root/go/pkg/mod/golang.org/x/sys@v0.0.0-20220829200755-d48e67d00261/unix/linux/Dockerfile ",
+        "unnecessary file : root/go/pkg/mod/google.golang.org/grpc@v1.49.0/interop/xds/server/Dockerfile ",
+        "unnecessary file : root/go/pkg/mod/google.golang.org/grpc@v1.49.0/interop/xds/client/Dockerfile ",
+        "unnecessary file : home/app/Dockerfile ",
+        "unnecessary file : root/go/pkg/mod/golang.org/x/net@v0.0.0-20220826154423-83b083e8dc8b/http2/Dockerfile ",
+        "unnecessary file : usr/local/go/src/crypto/internal/boring/Dockerfile ",
+        "unnecessary file : usr/local/go/src/crypto/internal/nistec/fiat/Dockerfile "
+      ]
+    }
+  ]
+}

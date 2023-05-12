@@ -1,0 +1,64 @@
+
+Testing /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/New_attacks/Violate_isolation_of_network/nmap ...
+
+ ✗ [Low] Insecure Xml Parser 
+   Path: ndiff/ndifftest.py, line 714 
+   Info: xml.dom.minidom.parseString is considered insecure. Use an analog from the defusedxml package.
+
+ ✗ [Medium] Insecure Xml Parser 
+   Path: zenmap/zenmapGUI/OptionBuilder.py, line 408 
+   Info: xml.dom.minidom.parse is considered insecure. Use an analog from the defusedxml package.
+
+ ✗ [Medium] Insecure Xml Parser 
+   Path: zenmap/zenmapGUI/ScriptInterface.py, line 152 
+   Info: xml.sax.make_parser is considered insecure. Use an analog from the defusedxml package.
+
+ ✗ [Medium] Insecure Xml Parser 
+   Path: zenmap/zenmapCore/NmapParser.py, line 1305 
+   Info: xml.sax.make_parser is considered insecure. Use an analog from the defusedxml package.
+
+ ✗ [Medium] Insecure Xml Parser 
+   Path: zenmap/radialnet/core/XMLHandler.py, line 249 
+   Info: xml.sax.make_parser is considered insecure. Use an analog from the defusedxml package.
+
+ ✗ [Medium] Insecure Xml Parser 
+   Path: ndiff/ndiff.py, line 63 
+   Info: xml.sax.make_parser is considered insecure. Use an analog from the defusedxml package.
+
+ ✗ [Medium] Insecure Xml Parser 
+   Path: zenmap/share/zenmap/locale/xgettext-profile_editor.py, line 52 
+   Info: xml.sax.make_parser is considered insecure. Use an analog from the defusedxml package.
+
+ ✗ [Medium] Insecure Xml Parser 
+   Path: zenmap/share/zenmap/locale/xgettext-profile_editor.py, line 57 
+   Info: xml.sax.make_parser is considered insecure. Use an analog from the defusedxml package.
+
+ ✗ [Medium] Path Traversal 
+   Path: zenmap/share/zenmap/locale/xgettext-profile_editor.py, line 48 
+   Info: Unsanitized input from a command line argument flows into os.chdir, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to manipulate arbitrary files.
+
+ ✗ [Medium] Use of Password Hash With Insufficient Computational Effort 
+   Path: zenmap/zenmapCore/UmitDB.py, line 229 
+   Info: hashlib.md5 is insecure. Consider changing it to a secure hashing algorithm (e.g. SHA256).
+
+ ✗ [Medium] Use of Password Hash With Insufficient Computational Effort 
+   Path: zenmap/zenmapCore/UmitDB.py, line 273 
+   Info: hashlib.md5 is insecure. Consider changing it to a secure hashing algorithm (e.g. SHA256).
+
+ ✗ [Medium] SQL Injection 
+   Path: zenmap/zenmapCore/UmitDB.py, line 249 
+   Info: Unsanitized input from the database flows into execute, where it is used in an SQL query. This may result in an SQL Injection vulnerability.
+
+
+✔ Test completed
+
+Organization:      vitaleantonio
+Test type:         Static code analysis
+Project path:      /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/New_attacks/Violate_isolation_of_network/nmap
+
+Summary:
+
+  12 Code issues found
+  11 [Medium]   1 [Low] 
+
+

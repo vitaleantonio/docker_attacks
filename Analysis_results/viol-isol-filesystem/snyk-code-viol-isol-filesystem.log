@@ -1,0 +1,20 @@
+
+Testing /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/New_attacks/Violate_the_isolation_of_filesystem/base-notebook ...
+
+ ✗ [High] Improper Certificate Validation 
+   Path: docker_healthcheck.py, line 19 
+   Info: Certificate verification is disabled by setting verify to False in requests.get. This may lead to Man-in-the-middle attacks.
+
+
+✔ Test completed
+
+Organization:      vitaleantonio
+Test type:         Static code analysis
+Project path:      /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/New_attacks/Violate_the_isolation_of_filesystem/base-notebook
+
+Summary:
+
+  1 Code issues found
+  1 [High] 
+
+

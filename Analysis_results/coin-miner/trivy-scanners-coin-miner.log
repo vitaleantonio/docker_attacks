@@ -1,0 +1,162 @@
+
+go/whoami/Dockerfile (dockerfile)
+=================================
+Tests: 26 (SUCCESSES: 22, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 1, MEDIUM: 1, HIGH: 2, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'alpine'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/whoami/Dockerfile:1
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 [ FROM alpine:latest as builder
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-cache' is missed: apk add --update python3 py3-pip
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use 'apk add' with '--no-cache' to clean package cached data and reduce image size.
+
+See https://avd.aquasec.com/misconfig/ds025
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/whoami/Dockerfile:14
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  14 [ RUN apk add --update python3 py3-pip
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/whoami/buildx.Dockerfile (dockerfile)
+========================================
+Tests: 26 (SUCCESSES: 24, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+usr/lib/go/src/crypto/internal/boring/Dockerfile (dockerfile)
+=============================================================
+Tests: 27 (SUCCESSES: 23, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 3, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY goboringcrypto.h /boring/godriver/goboringcrypto.h' command instead of 'ADD goboringcrypto.h /boring/godriver/goboringcrypto.h'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/lib/go/src/crypto/internal/boring/Dockerfile:41
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  41 [ ADD goboringcrypto.h /boring/godriver/goboringcrypto.h
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY build.sh /boring/build.sh' command instead of 'ADD build.sh /boring/build.sh'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/lib/go/src/crypto/internal/boring/Dockerfile:42
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  42 [ ADD build.sh /boring/build.sh
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+usr/lib/go/src/crypto/internal/nistec/fiat/Dockerfile (dockerfile)
+==================================================================
+Tests: 27 (SUCCESSES: 23, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 1, MEDIUM: 2, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'git clone https://github.com/mit-plv/fiat-crypto && cd fiat-crypto &&     git checkout 23d2dbc4ab897d14bde4404f70cd6991635f9c01 &&     git submodule update --init --recursive'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/lib/go/src/crypto/internal/nistec/fiat/Dockerfile:7-9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   7 ┌ RUN git clone https://github.com/mit-plv/fiat-crypto && cd fiat-crypto && \
+   8 │     git checkout 23d2dbc4ab897d14bde4404f70cd6991635f9c01 && \
+   9 └     git submodule update --init --recursive
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'cd fiat-crypto && eval $(opam env) && make -j4 standalone-ocaml SKIP_BEDROCK2=1'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/lib/go/src/crypto/internal/nistec/fiat/Dockerfile:10
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  10 [ RUN cd fiat-crypto && eval $(opam env) && make -j4 standalone-ocaml SKIP_BEDROCK2=1
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+

@@ -1,0 +1,529 @@
+
+home/app/Dockerfile (dockerfile)
+================================
+Tests: 26 (SUCCESSES: 23, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update &&     apt-get install -y build-essential curl stress'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ home/app/Dockerfile:3-4
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   3 ┌ RUN apt-get update && \
+   4 └     apt-get install -y build-essential curl stress
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+root/go/pkg/mod/github.com/creack/pty@v1.1.18/Dockerfile.golang (dockerfile)
+============================================================================
+Tests: 26 (SUCCESSES: 22, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 2, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY . .' command instead of 'ADD . .'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/github.com/creack/pty@v1.1.18/Dockerfile.golang:14
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  14 [ ADD . .
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: WORKDIR path 'pty' should be absolute
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+For clarity and reliability, you should always use absolute paths for your WORKDIR.
+
+See https://avd.aquasec.com/misconfig/ds009
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/github.com/creack/pty@v1.1.18/Dockerfile.golang:13
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  13 [ WORKDIR pty
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+root/go/pkg/mod/github.com/creack/pty@v1.1.18/Dockerfile.riscv (dockerfile)
+===========================================================================
+Tests: 27 (SUCCESSES: 21, FAILURES: 6, EXCEPTIONS: 0)
+Failures: 6 (UNKNOWN: 0, LOW: 2, MEDIUM: 2, HIGH: 2, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY . .' command instead of 'ADD . .'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/github.com/creack/pty@v1.1.18/Dockerfile.riscv:20
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  20 [ ADD . .
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: WORKDIR path 'pty' should be absolute
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+For clarity and reliability, you should always use absolute paths for your WORKDIR.
+
+See https://avd.aquasec.com/misconfig/ds009
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/github.com/creack/pty@v1.1.18/Dockerfile.riscv:19
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  19 [ WORKDIR pty
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'cd /riscv-go && git checkout 04885fddd096d09d4450726064d06dd107e374bf'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/github.com/creack/pty@v1.1.18/Dockerfile.riscv:7
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   7 [ RUN cd /riscv-go && git checkout 04885fddd096d09d4450726064d06dd107e374bf
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'cd /riscv-go/src && GOROOT_BOOTSTRAP=$(go env GOROOT) ./make.bash'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/github.com/creack/pty@v1.1.18/Dockerfile.riscv:9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   9 [ RUN cd /riscv-go/src && GOROOT_BOOTSTRAP=$(go env GOROOT) ./make.bash
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+root/go/pkg/mod/golang.org/x/net@v0.0.0-20220826154423-83b083e8dc8b/http2/Dockerfile (dockerfile)
+=================================================================================================
+Tests: 26 (SUCCESSES: 22, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 1, MEDIUM: 1, HIGH: 2, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'cd /root && git clone https://github.com/tatsuhiro-t/nghttp2.git'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/golang.org/x/net@v0.0.0-20220826154423-83b083e8dc8b/http2/Dockerfile:29
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  29 [ RUN cd /root && git clone https://github.com/tatsuhiro-t/nghttp2.git
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update &&     apt-get upgrade -y &&     apt-get install -y git-core build-essential wget'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/golang.org/x/net@v0.0.0-20220826154423-83b083e8dc8b/http2/Dockerfile:11-13
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  11 ┌ RUN apt-get update && \
+  12 │     apt-get upgrade -y && \
+  13 └     apt-get install -y git-core build-essential wget
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+root/go/pkg/mod/golang.org/x/sys@v0.0.0-20220829200755-d48e67d00261/unix/linux/Dockerfile (dockerfile)
+======================================================================================================
+Tests: 28 (SUCCESSES: 20, FAILURES: 8, EXCEPTIONS: 0)
+Failures: 8 (UNKNOWN: 0, LOW: 2, MEDIUM: 2, HIGH: 4, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'git clone https://github.com/loongson/golang-infra.git /git/loong64-patches     && git config --global user.name "golang" && git config --global user.email "golang@localhost"     && cd /git/loong64-patches && git checkout glibc-v2.35 && cd /git/glibc && git am /git/loong64-patches/*.patch     && curl -fsSL https://git.savannah.gnu.org/cgit/config.git/plain/config.sub -o /git/glibc/scripts/config.sub'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/golang.org/x/sys@v0.0.0-20220829200755-d48e67d00261/unix/linux/Dockerfile:24-27
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  24 ┌ RUN git clone https://github.com/loongson/golang-infra.git /git/loong64-patches \
+  25 │     && git config --global user.name "golang" && git config --global user.email "golang@localhost" \
+  26 │     && cd /git/loong64-patches && git checkout glibc-v2.35 && cd /git/glibc && git am /git/loong64-patches/*.patch \
+  27 └     && curl -fsSL https://git.savannah.gnu.org/cgit/config.git/plain/config.sub -o /git/glibc/scripts/config.sub
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc     && rm -rf /loong64'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/golang.org/x/sys@v0.0.0-20220829200755-d48e67d00261/unix/linux/Dockerfile:61-69
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  61 ┌ RUN apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64 \
+  62 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz \
+  63 │     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/ \
+  64 │     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1 \
+  65 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  66 │     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64 \
+  67 │     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  68 │     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc \
+  69 └     && rm -rf /loong64
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Shouldn't use both curl and wget
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Avoid using both 'wget' and 'curl' since these tools have the same effect.
+
+See https://avd.aquasec.com/misconfig/ds014
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/golang.org/x/sys@v0.0.0-20220829200755-d48e67d00261/unix/linux/Dockerfile:61-69
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  61 ┌ RUN apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64 \
+  62 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz \
+  63 │     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/ \
+  64 │     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1 \
+  65 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  66 │     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64 \
+  67 │     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  68 │     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc \
+  69 └     && rm -rf /loong64
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '-y' flag is missed: 'apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc     && rm -rf /loong64'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' calls should use the flag '-y' to avoid manual user input.
+
+See https://avd.aquasec.com/misconfig/ds021
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/golang.org/x/sys@v0.0.0-20220829200755-d48e67d00261/unix/linux/Dockerfile:61-69
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  61 ┌ RUN apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64 \
+  62 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz \
+  63 │     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/ \
+  64 │     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1 \
+  65 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  66 │     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64 \
+  67 │     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  68 │     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc \
+  69 └     && rm -rf /loong64
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update && apt-get install -y         gcc-aarch64-linux-gnu       gcc-arm-linux-gnueabi             gcc-mips-linux-gnu          gcc-mips64-linux-gnuabi64         gcc-mips64el-linux-gnuabi64 gcc-mipsel-linux-gnu              gcc-powerpc-linux-gnu       gcc-powerpc64-linux-gnu           gcc-powerpc64le-linux-gnu   gcc-riscv64-linux-gnu             gcc-s390x-linux-gnu         gcc-sparc64-linux-gnu         && apt-get clean     && rm -rf /var/lib/apt/lists/*'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/golang.org/x/sys@v0.0.0-20220829200755-d48e67d00261/unix/linux/Dockerfile:50-58
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  50 ┌ RUN apt-get update && apt-get install -y \
+  51 │         gcc-aarch64-linux-gnu       gcc-arm-linux-gnueabi     \
+  52 │         gcc-mips-linux-gnu          gcc-mips64-linux-gnuabi64 \
+  53 │         gcc-mips64el-linux-gnuabi64 gcc-mipsel-linux-gnu      \
+  54 │         gcc-powerpc-linux-gnu       gcc-powerpc64-linux-gnu   \
+  55 │         gcc-powerpc64le-linux-gnu   gcc-riscv64-linux-gnu     \
+  56 │         gcc-s390x-linux-gnu         gcc-sparc64-linux-gnu     \
+  57 │     && apt-get clean \
+  58 └     && rm -rf /var/lib/apt/lists/*
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc     && rm -rf /loong64'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/golang.org/x/sys@v0.0.0-20220829200755-d48e67d00261/unix/linux/Dockerfile:61-69
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  61 ┌ RUN apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64 \
+  62 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz \
+  63 │     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/ \
+  64 │     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1 \
+  65 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  66 │     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64 \
+  67 │     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  68 │     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc \
+  69 └     && rm -rf /loong64
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+root/go/pkg/mod/google.golang.org/grpc@v1.49.0/interop/xds/client/Dockerfile (dockerfile)
+=========================================================================================
+Tests: 26 (SUCCESSES: 23, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'alpine'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/google.golang.org/grpc@v1.49.0/interop/xds/client/Dockerfile:32
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  32 [ FROM alpine
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+root/go/pkg/mod/google.golang.org/grpc@v1.49.0/interop/xds/server/Dockerfile (dockerfile)
+=========================================================================================
+Tests: 26 (SUCCESSES: 23, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'alpine'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ root/go/pkg/mod/google.golang.org/grpc@v1.49.0/interop/xds/server/Dockerfile:32
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  32 [ FROM alpine
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+usr/local/go/src/crypto/internal/boring/Dockerfile (dockerfile)
+===============================================================
+Tests: 28 (SUCCESSES: 22, FAILURES: 6, EXCEPTIONS: 0)
+Failures: 6 (UNKNOWN: 0, LOW: 4, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY build-boring.sh /boring/build-boring.sh' command instead of 'ADD build-boring.sh /boring/build-boring.sh'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/local/go/src/crypto/internal/boring/Dockerfile:56
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  56 [ ADD build-boring.sh /boring/build-boring.sh
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY goboringcrypto.h /boring/godriver/goboringcrypto.h' command instead of 'ADD goboringcrypto.h /boring/godriver/goboringcrypto.h'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/local/go/src/crypto/internal/boring/Dockerfile:61
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  61 [ ADD goboringcrypto.h /boring/godriver/goboringcrypto.h
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY build-goboring.sh /boring/build-goboring.sh' command instead of 'ADD build-goboring.sh /boring/build-goboring.sh'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/local/go/src/crypto/internal/boring/Dockerfile:62
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  62 [ ADD build-goboring.sh /boring/build-goboring.sh
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'wget https://github.com/ninja-build/ninja/archive/refs/tags/v$NinjaV.tar.gz && 	echo "$NinjaH v$NinjaV.tar.gz" >sha && sha256sum -c sha && 	tar -xzf v$NinjaV.tar.gz && 	rm v$NinjaV.tar.gz && 	cd ninja-$NinjaV && 	CC=clang-$ClangV CXX=clang++-$ClangV ./configure.py --bootstrap && 	mv ninja /usr/local/bin/'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/local/go/src/crypto/internal/boring/Dockerfile:25-32
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  25 ┌ RUN \
+  26 │ 	wget https://github.com/ninja-build/ninja/archive/refs/tags/v$NinjaV.tar.gz && \
+  27 │ 	echo "$NinjaH v$NinjaV.tar.gz" >sha && sha256sum -c sha && \
+  28 │ 	tar -xzf v$NinjaV.tar.gz && \
+  29 │ 	rm v$NinjaV.tar.gz && \
+  30 │ 	cd ninja-$NinjaV && \
+  31 │ 	CC=clang-$ClangV CXX=clang++-$ClangV ./configure.py --bootstrap && \
+  32 └ 	mv ninja /usr/local/bin/
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+usr/local/go/src/crypto/internal/nistec/fiat/Dockerfile (dockerfile)
+====================================================================
+Tests: 27 (SUCCESSES: 23, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 1, MEDIUM: 2, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'git clone https://github.com/mit-plv/fiat-crypto && cd fiat-crypto &&     git checkout 23d2dbc4ab897d14bde4404f70cd6991635f9c01 &&     git submodule update --init --recursive'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/local/go/src/crypto/internal/nistec/fiat/Dockerfile:7-9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   7 ┌ RUN git clone https://github.com/mit-plv/fiat-crypto && cd fiat-crypto && \
+   8 │     git checkout 23d2dbc4ab897d14bde4404f70cd6991635f9c01 && \
+   9 └     git submodule update --init --recursive
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'cd fiat-crypto && eval $(opam env) && make -j4 standalone-ocaml SKIP_BEDROCK2=1'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ usr/local/go/src/crypto/internal/nistec/fiat/Dockerfile:10
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  10 [ RUN cd fiat-crypto && eval $(opam env) && make -j4 standalone-ocaml SKIP_BEDROCK2=1
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+

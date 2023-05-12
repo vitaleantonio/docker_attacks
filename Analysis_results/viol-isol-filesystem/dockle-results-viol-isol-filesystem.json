@@ -1,0 +1,73 @@
+{
+  "image": "viol-isol-filesystem",
+  "summary": {
+    "fatal": 3,
+    "warn": 1,
+    "info": 2,
+    "skip": 0,
+    "pass": 10
+  },
+  "details": [
+    {
+      "code": "CIS-DI-0009",
+      "title": "Use COPY instead of ADD in Dockerfile",
+      "level": "FATAL",
+      "alerts": [
+        "Use COPY : /bin/sh -c #(nop) ADD file:c8ef6447752cab2541ffca9e3cfa27d581f3491bc8f356f6eafd951243609341 in / "
+      ]
+    },
+    {
+      "code": "CIS-DI-0010",
+      "title": "Do not store credential in environment variables/files",
+      "level": "FATAL",
+      "alerts": [
+        "Suspicious filename found : opt/conda/lib/python3.10/site-packages/jedi/settings.py (You can suppress it with \"-af settings.py\")"
+      ]
+    },
+    {
+      "code": "DKL-DI-0001",
+      "title": "Avoid sudo command",
+      "level": "FATAL",
+      "alerts": [
+        "Avoid sudo in container : RUN |3 NB_USER=jovyan NB_UID=1000 NB_GID=100 /bin/bash -o pipefail -c apt-get update --yes \u0026\u0026     apt-get upgrade --yes \u0026\u0026     apt-get install --yes --no-install-recommends     bzip2     ca-certificates     locales     sudo     tini     wget \u0026\u0026     apt-get clean \u0026\u0026 rm -rf /var/lib/apt/lists/* \u0026\u0026     echo \"en_US.UTF-8 UTF-8\" \u003e /etc/locale.gen \u0026\u0026     locale-gen # buildkit"
+      ]
+    },
+    {
+      "code": "DKL-DI-0006",
+      "title": "Avoid latest tag",
+      "level": "WARN",
+      "alerts": [
+        "Avoid 'latest' tag"
+      ]
+    },
+    {
+      "code": "CIS-DI-0005",
+      "title": "Enable Content trust for Docker",
+      "level": "INFO",
+      "alerts": [
+        "export DOCKER_CONTENT_TRUST=1 before docker pull/build"
+      ]
+    },
+    {
+      "code": "CIS-DI-0008",
+      "title": "Confirm safety of setuid/setgid files",
+      "level": "INFO",
+      "alerts": [
+        "setgid file: grwxr-xr-x usr/bin/chage",
+        "setuid file: urwxr-xr-x usr/bin/mount",
+        "setuid file: urwxr-xr-x usr/bin/su",
+        "setgid file: grwxr-xr-x usr/bin/expiry",
+        "setuid file: urwxr-xr-x usr/bin/umount",
+        "setgid file: grwxr-xr-x usr/bin/wall",
+        "setuid file: urwxr-xr-x usr/bin/chfn",
+        "setuid file: urwxr-xr-x usr/bin/newgrp",
+        "setuid file: urwxr-xr-x usr/bin/passwd",
+        "setgid file: grwxr-xr-x usr/sbin/unix_chkpwd",
+        "setuid file: urwxr-xr-x usr/bin/gpasswd",
+        "setuid file: urwxr-xr-x usr/bin/sudo",
+        "setuid file: urwxr-xr-x usr/bin/chsh",
+        "setgid file: grwxr-xr-x usr/sbin/pam_extrausers_chkpwd"
+      ]
+    }
+  ]
+}

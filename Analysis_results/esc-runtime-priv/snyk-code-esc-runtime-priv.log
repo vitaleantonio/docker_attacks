@@ -1,0 +1,24 @@
+
+Testing /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/New_attacks/Escalate_runtime_privileges/sysbox ...
+
+ ✗ [Medium] Use of Password Hash With Insufficient Computational Effort 
+   Path: cmd_with_lock.go, line 61 
+   Info: The SHA1 hash (used in crypto.sha1.New) is insecure. Consider changing it to a secure hash algorithm
+
+ ✗ [High] Path Traversal 
+   Path: cmd_cpp.go, line 86 
+   Info: Unsanitized input from reader flows into os.ReadFile, where it is used as a path. This may result in a Path Traversal vulnerability and allow an attacker to read arbitrary files.
+
+
+✔ Test completed
+
+Organization:      vitaleantonio
+Test type:         Static code analysis
+Project path:      /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/New_attacks/Escalate_runtime_privileges/sysbox
+
+Summary:
+
+  2 Code issues found
+  1 [High]   1 [Medium] 
+
+

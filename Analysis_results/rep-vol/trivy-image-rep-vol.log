@@ -1,0 +1,88 @@
+
+rep-vol (ubuntu 20.04)
+======================
+Total: 22 (UNKNOWN: 0, LOW: 22, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
+
+┌──────────────┬────────────────┬──────────┬──────────────────────────┬───────────────┬──────────────────────────────────────────────────────────────┐
+│   Library    │ Vulnerability  │ Severity │    Installed Version     │ Fixed Version │                            Title                             │
+├──────────────┼────────────────┼──────────┼──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ coreutils    │ CVE-2016-2781  │ LOW      │ 8.30-3ubuntu2            │               │ coreutils: Non-privileged session can escape to the parent   │
+│              │                │          │                          │               │ session in chroot                                            │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2016-2781                    │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ gpgv         │ CVE-2022-3219  │          │ 2.2.19-3ubuntu2.2        │               │ gnupg: denial of service issue (resource consumption) using  │
+│              │                │          │                          │               │ compressed packets                                           │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-3219                    │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libc-bin     │ CVE-2016-20013 │          │ 2.31-0ubuntu9.9          │               │ sha256crypt and sha512crypt through 0.6 allow attackers to   │
+│              │                │          │                          │               │ cause a denial of...                                         │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2016-20013                   │
+├──────────────┤                │          │                          ├───────────────┤                                                              │
+│ libc6        │                │          │                          │               │                                                              │
+│              │                │          │                          │               │                                                              │
+│              │                │          │                          │               │                                                              │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libncurses6  │ CVE-2021-39537 │          │ 6.2-0ubuntu2             │               │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
+│              │                │          │                          │               │ captoinfo.c                                                  │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
+│              ├────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2022-29458 │          │                          │               │ ncurses: segfaulting OOB read                                │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+├──────────────┼────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│ libncursesw6 │ CVE-2021-39537 │          │                          │               │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
+│              │                │          │                          │               │ captoinfo.c                                                  │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
+│              ├────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2022-29458 │          │                          │               │ ncurses: segfaulting OOB read                                │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libpcre3     │ CVE-2017-11164 │          │ 2:8.39-12ubuntu0.1       │               │ pcre: OP_KETRMAX feature in the match function in            │
+│              │                │          │                          │               │ pcre_exec.c                                                  │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2017-11164                   │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libpng16-16  │ CVE-2022-3857  │          │ 1.6.37-2                 │               │ libpng: Null pointer dereference leads to segmentation fault │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-3857                    │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libsystemd0  │ CVE-2023-26604 │          │ 245.4-4ubuntu3.20        │               │ systemd: privilege escalation via the less pager             │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-26604                   │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libtinfo6    │ CVE-2021-39537 │          │ 6.2-0ubuntu2             │               │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
+│              │                │          │                          │               │ captoinfo.c                                                  │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
+│              ├────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2022-29458 │          │                          │               │ ncurses: segfaulting OOB read                                │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libudev1     │ CVE-2023-26604 │          │ 245.4-4ubuntu3.20        │               │ systemd: privilege escalation via the less pager             │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-26604                   │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ login        │ CVE-2013-4235  │          │ 1:4.8.1-1ubuntu5.20.04.4 │               │ shadow-utils: TOCTOU race conditions by copying and removing │
+│              │                │          │                          │               │ directory trees                                              │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2013-4235                    │
+│              ├────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-29383 │          │                          │               │ Improper input validation in shadow-utils package utility    │
+│              │                │          │                          │               │ chfn                                                         │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-29383                   │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ ncurses-base │ CVE-2021-39537 │          │ 6.2-0ubuntu2             │               │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
+│              │                │          │                          │               │ captoinfo.c                                                  │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
+│              ├────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2022-29458 │          │                          │               │ ncurses: segfaulting OOB read                                │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+├──────────────┼────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│ ncurses-bin  │ CVE-2021-39537 │          │                          │               │ ncurses: heap-based buffer overflow in _nc_captoinfo() in    │
+│              │                │          │                          │               │ captoinfo.c                                                  │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2021-39537                   │
+│              ├────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2022-29458 │          │                          │               │ ncurses: segfaulting OOB read                                │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-29458                   │
+├──────────────┼────────────────┤          ├──────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ passwd       │ CVE-2013-4235  │          │ 1:4.8.1-1ubuntu5.20.04.4 │               │ shadow-utils: TOCTOU race conditions by copying and removing │
+│              │                │          │                          │               │ directory trees                                              │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2013-4235                    │
+│              ├────────────────┤          │                          ├───────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-29383 │          │                          │               │ Improper input validation in shadow-utils package utility    │
+│              │                │          │                          │               │ chfn                                                         │
+│              │                │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-29383                   │
+└──────────────┴────────────────┴──────────┴──────────────────────────┴───────────────┴──────────────────────────────────────────────────────────────┘

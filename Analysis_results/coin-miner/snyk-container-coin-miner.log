@@ -1,0 +1,295 @@
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   apk
+Target file:       /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/New_attacks/Bonus/Coin_miner/whoami/Dockerfile
+Project name:      docker-image|coin-miner
+Docker image:      coin-miner
+Platform:          linux/amd64
+Base image:        alpine:latest
+Licenses:          enabled
+
+✔ Tested 56 dependencies for known issues, no vulnerable paths found.
+
+According to our scan, you are currently using the most secure version of the selected base image
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Tested 16 dependencies for known issues, found 1 issue.
+
+
+Issues with no direct upgrade or patch:
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-D3COLOR-1076592] in d3-color@1.4.1
+    introduced by d3-flame-graph@4.1.3 > d3-transition@3.0.1 > d3-color@1.4.1 and 2 other path(s)
+  This issue was fixed in versions: 3.1.0
+
+
+
+Organization:      vitaleantonio
+Package manager:   npm
+Target file:       /usr/lib/go/src/cmd/vendor/github.com/google/pprof/third_party/d3flamegraph/package.json
+Project name:      d3-pprof
+Docker image:      coin-miner
+Licenses:          enabled
+
+Pro tip: use `--exclude-base-image-vulns` to exclude from display Docker base image vulnerabilities.
+
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See https://snyk.co/app-vulns for more information.
+
+To remove these messages in the future, please run `snyk config set disableSuggestions=true`
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/bin/go
+Project name:      go-distribution@cmd/go
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/bin/gofmt
+Project name:      go-distribution@cmd/gofmt
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/addr2line
+Project name:      go-distribution@cmd/addr2line
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/asm
+Project name:      go-distribution@cmd/asm
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/buildid
+Project name:      go-distribution@cmd/buildid
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/cgo
+Project name:      go-distribution@cmd/cgo
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/compile
+Project name:      go-distribution@cmd/compile
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/cover
+Project name:      go-distribution@cmd/cover
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/dist
+Project name:      go-distribution@cmd/dist
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/doc
+Project name:      go-distribution@cmd/doc
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/fix
+Project name:      go-distribution@cmd/fix
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/link
+Project name:      go-distribution@cmd/link
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/nm
+Project name:      go-distribution@cmd/nm
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/objdump
+Project name:      go-distribution@cmd/objdump
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/pack
+Project name:      go-distribution@cmd/pack
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/pprof
+Project name:      go-distribution@cmd/pprof
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/test2json
+Project name:      go-distribution@cmd/test2json
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/trace
+Project name:      go-distribution@cmd/trace
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing coin-miner...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/lib/go/pkg/tool/linux_amd64/vet
+Project name:      go-distribution@cmd/vet
+Docker image:      coin-miner
+Licenses:          enabled
+
+✔ Tested coin-miner for known issues, no vulnerable paths found.
+
+
+Tested 21 projects, 1 contained vulnerable paths.
+
+
+

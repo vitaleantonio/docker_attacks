@@ -1,0 +1,541 @@
+
+Testing esc-runtime-priv...
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: CVE-2023-26604
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SYSTEMD-3339226
+  Introduced through: systemd/libsystemd0@245.4-4ubuntu3.20, apt@2.0.9, procps/libprocps8@2:3.3.16-1ubuntu2.3, util-linux/bsdutils@1:2.34-0.1ubuntu9.3, util-linux/mount@2.34-0.1ubuntu9.3, systemd/libudev1@245.4-4ubuntu3.20
+  From: systemd/libsystemd0@245.4-4ubuntu3.20
+  From: apt@2.0.9 > systemd/libsystemd0@245.4-4ubuntu3.20
+  From: procps/libprocps8@2:3.3.16-1ubuntu2.3 > systemd/libsystemd0@245.4-4ubuntu3.20
+  and 6 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in sqlite3/libsqlite3-0
+  Description: CVE-2020-9991
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SQLITE3-1070680
+  Introduced through: gnupg2/gnupg@2.2.19-3ubuntu2.2, curl@7.68.0-1ubuntu2.18
+  From: gnupg2/gnupg@2.2.19-3ubuntu2.2 > gnupg2/gpg@2.2.19-3ubuntu2.2 > sqlite3/libsqlite3-0@3.31.1-4ubuntu0.5
+  From: curl@7.68.0-1ubuntu2.18 > curl/libcurl4@7.68.0-1ubuntu2.18 > openldap/libldap-2.4-2@2.4.49+dfsg-2ubuntu1.9 > heimdal/libgssapi3-heimdal@7.7.0+dfsg-1ubuntu1.4 > heimdal/libheimntlm0-heimdal@7.7.0+dfsg-1ubuntu1.4 > heimdal/libkrb5-26-heimdal@7.7.0+dfsg-1ubuntu1.4 > sqlite3/libsqlite3-0@3.31.1-4ubuntu0.5
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SQLITE3-1070691
+  Introduced through: gnupg2/gnupg@2.2.19-3ubuntu2.2, curl@7.68.0-1ubuntu2.18
+  From: gnupg2/gnupg@2.2.19-3ubuntu2.2 > gnupg2/gpg@2.2.19-3ubuntu2.2 > sqlite3/libsqlite3-0@3.31.1-4ubuntu0.5
+  From: curl@7.68.0-1ubuntu2.18 > curl/libcurl4@7.68.0-1ubuntu2.18 > openldap/libldap-2.4-2@2.4.49+dfsg-2ubuntu1.9 > heimdal/libgssapi3-heimdal@7.7.0+dfsg-1ubuntu1.4 > heimdal/libheimntlm0-heimdal@7.7.0+dfsg-1ubuntu1.4 > heimdal/libkrb5-26-heimdal@7.7.0+dfsg-1ubuntu1.4 > sqlite3/libsqlite3-0@3.31.1-4ubuntu0.5
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Arbitrary Code Injection
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SHADOW-5425687
+  Introduced through: shadow/passwd@1:4.8.1-1ubuntu5.20.04.4, adduser@3.118ubuntu2, shadow/login@1:4.8.1-1ubuntu5.20.04.4, util-linux/mount@2.34-0.1ubuntu9.3
+  From: shadow/passwd@1:4.8.1-1ubuntu5.20.04.4
+  From: adduser@3.118ubuntu2 > shadow/passwd@1:4.8.1-1ubuntu5.20.04.4
+  From: shadow/login@1:4.8.1-1ubuntu5.20.04.4
+  and 1 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Time-of-check Time-of-use (TOCTOU)
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SHADOW-577863
+  Introduced through: shadow/passwd@1:4.8.1-1ubuntu5.20.04.4, adduser@3.118ubuntu2, shadow/login@1:4.8.1-1ubuntu5.20.04.4, util-linux/mount@2.34-0.1ubuntu9.3
+  From: shadow/passwd@1:4.8.1-1ubuntu5.20.04.4
+  From: adduser@3.118ubuntu2 > shadow/passwd@1:4.8.1-1ubuntu5.20.04.4
+  From: shadow/login@1:4.8.1-1ubuntu5.20.04.4
+  and 1 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in pcre3/libpcre3
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-PCRE3-580031
+  Introduced through: pcre3/libpcre3@2:8.39-12ubuntu0.1, grep@3.4-1
+  From: pcre3/libpcre3@2:8.39-12ubuntu0.1
+  From: grep@3.4-1 > pcre3/libpcre3@2:8.39-12ubuntu0.1
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in patch
+  Description: Release of Invalid Pointer or Reference
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-PATCH-2325780
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > dpkg/dpkg-dev@1.19.7ubuntu3.2 > patch@2.7.6-6
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in patch
+  Description: Double Free
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-PATCH-582546
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > dpkg/dpkg-dev@1.19.7ubuntu3.2 > patch@2.7.6-6
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in ncurses/libtinfo6
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-NCURSES-1656318
+  Introduced through: ncurses/libtinfo6@6.2-0ubuntu2, bash@5.0-6ubuntu1.2, ncurses/libncurses6@6.2-0ubuntu2, ncurses/ncurses-bin@6.2-0ubuntu2, procps@2:3.3.16-1ubuntu2.3, util-linux/fdisk@2.34-0.1ubuntu9.3, util-linux/mount@2.34-0.1ubuntu9.3, gnupg2/dirmngr@2.2.19-3ubuntu2.2, gnupg2/gnupg@2.2.19-3ubuntu2.2, ncurses/libncursesw6@6.2-0ubuntu2, ncurses/ncurses-base@6.2-0ubuntu2
+  From: ncurses/libtinfo6@6.2-0ubuntu2
+  From: bash@5.0-6ubuntu1.2 > ncurses/libtinfo6@6.2-0ubuntu2
+  From: ncurses/libncurses6@6.2-0ubuntu2 > ncurses/libtinfo6@6.2-0ubuntu2
+  and 15 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in ncurses/libtinfo6
+  Description: Out-of-bounds Read
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-NCURSES-2770341
+  Introduced through: ncurses/libtinfo6@6.2-0ubuntu2, bash@5.0-6ubuntu1.2, ncurses/libncurses6@6.2-0ubuntu2, ncurses/ncurses-bin@6.2-0ubuntu2, procps@2:3.3.16-1ubuntu2.3, util-linux/fdisk@2.34-0.1ubuntu9.3, util-linux/mount@2.34-0.1ubuntu9.3, gnupg2/dirmngr@2.2.19-3ubuntu2.2, gnupg2/gnupg@2.2.19-3ubuntu2.2, ncurses/libncursesw6@6.2-0ubuntu2, ncurses/ncurses-base@6.2-0ubuntu2
+  From: ncurses/libtinfo6@6.2-0ubuntu2
+  From: bash@5.0-6ubuntu1.2 > ncurses/libtinfo6@6.2-0ubuntu2
+  From: ncurses/libncurses6@6.2-0ubuntu2 > ncurses/libtinfo6@6.2-0ubuntu2
+  and 15 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in krb5/libkrb5support0
+  Description: Integer Overflow or Wraparound
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-KRB5-579303
+  Introduced through: curl@7.68.0-1ubuntu2.18, krb5/krb5-locales@1.17-6ubuntu4.3
+  From: curl@7.68.0-1ubuntu2.18 > curl/libcurl4@7.68.0-1ubuntu2.18 > krb5/libgssapi-krb5-2@1.17-6ubuntu4.3 > krb5/libkrb5support0@1.17-6ubuntu4.3
+  From: curl@7.68.0-1ubuntu2.18 > curl/libcurl4@7.68.0-1ubuntu2.18 > krb5/libgssapi-krb5-2@1.17-6ubuntu4.3 > krb5/libk5crypto3@1.17-6ubuntu4.3 > krb5/libkrb5support0@1.17-6ubuntu4.3
+  From: curl@7.68.0-1ubuntu2.18 > curl/libcurl4@7.68.0-1ubuntu2.18 > krb5/libgssapi-krb5-2@1.17-6ubuntu4.3 > krb5/libkrb5-3@1.17-6ubuntu4.3 > krb5/libkrb5support0@1.17-6ubuntu4.3
+  and 6 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in gnupg2/gpgv
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-GNUPG2-3035407
+  Introduced through: gnupg2/gpgv@2.2.19-3ubuntu2.2, apt@2.0.9, gnupg2/gnupg@2.2.19-3ubuntu2.2, gnupg2/gpgconf@2.2.19-3ubuntu2.2, gnupg2/dirmngr@2.2.19-3ubuntu2.2, gnupg2/gnupg-l10n@2.2.19-3ubuntu2.2, gnupg2/gnupg-utils@2.2.19-3ubuntu2.2, gnupg2/gpg@2.2.19-3ubuntu2.2, gnupg2/gpg-agent@2.2.19-3ubuntu2.2, gnupg2/gpg-wks-client@2.2.19-3ubuntu2.2, gnupg2/gpg-wks-server@2.2.19-3ubuntu2.2, gnupg2/gpgsm@2.2.19-3ubuntu2.2
+  From: gnupg2/gpgv@2.2.19-3ubuntu2.2
+  From: apt@2.0.9 > gnupg2/gpgv@2.2.19-3ubuntu2.2
+  From: gnupg2/gnupg@2.2.19-3ubuntu2.2 > gnupg2/gpgv@2.2.19-3ubuntu2.2
+  and 27 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in glibc/libc6-dev
+  Description: Use After Free
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-GLIBC-1297554
+  Introduced through: build-essential@12.8ubuntu1.1, glibc/libc-bin@2.31-0ubuntu9.9, meta-common-packages@meta
+  From: build-essential@12.8ubuntu1.1 > glibc/libc6-dev@2.31-0ubuntu9.9
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/g++@4:9.3.0-1ubuntu2 > gcc-9/g++-9@9.4.0-1ubuntu1~20.04.1 > gcc-9/libstdc++-9-dev@9.4.0-1ubuntu1~20.04.1 > glibc/libc6-dev@2.31-0ubuntu9.9
+  From: build-essential@12.8ubuntu1.1 > glibc/libc6-dev@2.31-0ubuntu9.9 > glibc/libc-dev-bin@2.31-0ubuntu9.9
+  and 2 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in glibc/libc6-dev
+  Description: Allocation of Resources Without Limits or Throttling
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-GLIBC-2415100
+  Introduced through: build-essential@12.8ubuntu1.1, glibc/libc-bin@2.31-0ubuntu9.9, meta-common-packages@meta
+  From: build-essential@12.8ubuntu1.1 > glibc/libc6-dev@2.31-0ubuntu9.9
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/g++@4:9.3.0-1ubuntu2 > gcc-9/g++-9@9.4.0-1ubuntu1~20.04.1 > gcc-9/libstdc++-9-dev@9.4.0-1ubuntu1~20.04.1 > glibc/libc6-dev@2.31-0ubuntu9.9
+  From: build-essential@12.8ubuntu1.1 > glibc/libc6-dev@2.31-0ubuntu9.9 > glibc/libc-dev-bin@2.31-0ubuntu9.9
+  and 2 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in coreutils
+  Description: Improper Input Validation
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-COREUTILS-583876
+  Introduced through: coreutils@8.30-3ubuntu2
+  From: coreutils@8.30-3ubuntu2
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in binutils
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-BINUTILS-2321208
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > dpkg/dpkg-dev@1.19.7ubuntu3.2 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4 > binutils/binutils-common@2.34-6ubuntu1.4
+  and 8 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in binutils
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-BINUTILS-3150503
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > dpkg/dpkg-dev@1.19.7ubuntu3.2 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4 > binutils/binutils-common@2.34-6ubuntu1.4
+  and 8 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in binutils
+  Description: Allocation of Resources Without Limits or Throttling
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-BINUTILS-583560
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > dpkg/dpkg-dev@1.19.7ubuntu3.2 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4 > binutils/binutils-common@2.34-6ubuntu1.4
+  and 8 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in binutils
+  Description: Improper Input Validation
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-BINUTILS-584269
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > dpkg/dpkg-dev@1.19.7ubuntu3.2 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4 > binutils/binutils-common@2.34-6ubuntu1.4
+  and 8 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Low severity vulnerability found in binutils
+  Description: Missing Release of Resource after Effective Lifetime
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-BINUTILS-842774
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > dpkg/dpkg-dev@1.19.7ubuntu3.2 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1 > binutils@2.34-6ubuntu1.4 > binutils/binutils-common@2.34-6ubuntu1.4
+  and 8 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Out-of-bounds Read
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SQLITE3-581593
+  Introduced through: gnupg2/gnupg@2.2.19-3ubuntu2.2, curl@7.68.0-1ubuntu2.18
+  From: gnupg2/gnupg@2.2.19-3ubuntu2.2 > gnupg2/gpg@2.2.19-3ubuntu2.2 > sqlite3/libsqlite3-0@3.31.1-4ubuntu0.5
+  From: curl@7.68.0-1ubuntu2.18 > curl/libcurl4@7.68.0-1ubuntu2.18 > openldap/libldap-2.4-2@2.4.49+dfsg-2ubuntu1.9 > heimdal/libgssapi3-heimdal@7.7.0+dfsg-1ubuntu1.4 > heimdal/libheimntlm0-heimdal@7.7.0+dfsg-1ubuntu1.4 > heimdal/libkrb5-26-heimdal@7.7.0+dfsg-1ubuntu1.4 > sqlite3/libsqlite3-0@3.31.1-4ubuntu0.5
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Medium severity vulnerability found in gcc-defaults/cpp
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-GCCDEFAULTS-584255
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/g++@4:9.3.0-1ubuntu2 > gcc-defaults/cpp@4:9.3.0-1ubuntu2
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-defaults/cpp@4:9.3.0-1ubuntu2
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2
+  and 2 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Medium severity vulnerability found in gcc-9
+  Description: Information Exposure
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-GCC9-584247
+  Introduced through: build-essential@12.8ubuntu1.1
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/g++@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/gcc@4:9.3.0-1ubuntu2 > gcc-9@9.4.0-1ubuntu1~20.04.1
+  From: build-essential@12.8ubuntu1.1 > gcc-defaults/g++@4:9.3.0-1ubuntu2 > gcc-9/g++-9@9.4.0-1ubuntu1~20.04.1 > gcc-9@9.4.0-1ubuntu1~20.04.1
+  and 13 more...
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+✗ Medium severity vulnerability found in curl/libcurl4
+  Description: Exposure of Resource to Wrong Sphere
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-CURL-3070971
+  Introduced through: curl@7.68.0-1ubuntu2.18
+  From: curl@7.68.0-1ubuntu2.18 > curl/libcurl4@7.68.0-1ubuntu2.18
+  From: curl@7.68.0-1ubuntu2.18
+  Image layer: 'apt-get install -y build-essential curl stress'
+
+
+
+Organization:      vitaleantonio
+Package manager:   deb
+Target file:       /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/New_attacks/Escalate_runtime_privileges/sysbox/Dockerfile
+Project name:      docker-image|esc-runtime-priv
+Docker image:      esc-runtime-priv
+Platform:          linux/amd64
+Base image:        ubuntu:20.04
+Licenses:          enabled
+
+Tested 194 dependencies for known issues, found 24 issues.
+
+Your base image is out of date
+1) Pull the latest version of your base image by running 'docker pull ubuntu:20.04'
+2) Rebuild your local image
+
+Pro tip: use `--exclude-base-image-vulns` to exclude from display Docker base image vulnerabilities.
+
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See https://snyk.co/app-vulns for more information.
+
+To remove these messages in the future, please run `snyk config set disableSuggestions=true`
+
+Learn more: https://docs.snyk.io/products/snyk-container/getting-around-the-snyk-container-ui/base-image-detection
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Tested 16 dependencies for known issues, found 1 issue.
+
+
+Issues with no direct upgrade or patch:
+  ✗ Regular Expression Denial of Service (ReDoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JS-D3COLOR-1076592] in d3-color@1.4.1
+    introduced by d3-flame-graph@4.1.3 > d3-transition@3.0.1 > d3-color@1.4.1 and 2 other path(s)
+  This issue was fixed in versions: 3.1.0
+
+
+
+Organization:      vitaleantonio
+Package manager:   npm
+Target file:       /usr/local/go/src/cmd/vendor/github.com/google/pprof/third_party/d3flamegraph/package.json
+Project name:      d3-pprof
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+Pro tip: use `--exclude-base-image-vulns` to exclude from display Docker base image vulnerabilities.
+
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See https://snyk.co/app-vulns for more information.
+
+To remove these messages in the future, please run `snyk config set disableSuggestions=true`
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/bin/go
+Project name:      go-distribution@cmd/go
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/bin/gofmt
+Project name:      go-distribution@cmd/gofmt
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/addr2line
+Project name:      go-distribution@cmd/addr2line
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/asm
+Project name:      go-distribution@cmd/asm
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/buildid
+Project name:      go-distribution@cmd/buildid
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/cgo
+Project name:      go-distribution@cmd/cgo
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/compile
+Project name:      go-distribution@cmd/compile
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/covdata
+Project name:      go-distribution@cmd/covdata
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/cover
+Project name:      go-distribution@cmd/cover
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/dist
+Project name:      go-distribution@cmd/dist
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/doc
+Project name:      go-distribution@cmd/doc
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/fix
+Project name:      go-distribution@cmd/fix
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/link
+Project name:      go-distribution@cmd/link
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/nm
+Project name:      go-distribution@cmd/nm
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/objdump
+Project name:      go-distribution@cmd/objdump
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/pack
+Project name:      go-distribution@cmd/pack
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/pprof
+Project name:      go-distribution@cmd/pprof
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/test2json
+Project name:      go-distribution@cmd/test2json
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/trace
+Project name:      go-distribution@cmd/trace
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+-------------------------------------------------------
+
+Testing esc-runtime-priv...
+
+Organization:      vitaleantonio
+Package manager:   gomodules
+Target file:       /usr/local/go/pkg/tool/linux_amd64/vet
+Project name:      go-distribution@cmd/vet
+Docker image:      esc-runtime-priv
+Licenses:          enabled
+
+✔ Tested esc-runtime-priv for known issues, no vulnerable paths found.
+
+
+Tested 22 projects, 2 contained vulnerable paths.
+
+
+

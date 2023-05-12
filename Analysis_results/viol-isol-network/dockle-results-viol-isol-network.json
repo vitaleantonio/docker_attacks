@@ -1,0 +1,60 @@
+{
+  "image": "viol-isol-network",
+  "summary": {
+    "fatal": 1,
+    "warn": 2,
+    "info": 3,
+    "skip": 0,
+    "pass": 10
+  },
+  "details": [
+    {
+      "code": "DKL-DI-0004",
+      "title": "Use \"apk add\" with --no-cache",
+      "level": "FATAL",
+      "alerts": [
+        "Use --no-cache option if use 'apk add': /bin/sh -c echo \"Installing Nmap\" \u0026\u0026     apk update \u0026\u0026     apk upgrade \u0026\u0026     apk add build-base \u0026\u0026     apk add flex \u0026\u0026     apk add libcap-dev \u0026\u0026     apk add openssl-dev \u0026\u0026     apk add libssh2-dev \u0026\u0026     apk add bison \u0026\u0026     apk add curl"
+      ]
+    },
+    {
+      "code": "CIS-DI-0001",
+      "title": "Create a user for the container",
+      "level": "WARN",
+      "alerts": [
+        "Last user should not be root"
+      ]
+    },
+    {
+      "code": "DKL-DI-0006",
+      "title": "Avoid latest tag",
+      "level": "WARN",
+      "alerts": [
+        "Avoid 'latest' tag"
+      ]
+    },
+    {
+      "code": "CIS-DI-0005",
+      "title": "Enable Content trust for Docker",
+      "level": "INFO",
+      "alerts": [
+        "export DOCKER_CONTENT_TRUST=1 before docker pull/build"
+      ]
+    },
+    {
+      "code": "CIS-DI-0006",
+      "title": "Add HEALTHCHECK instruction to the container image",
+      "level": "INFO",
+      "alerts": [
+        "not found HEALTHCHECK statement"
+      ]
+    },
+    {
+      "code": "DKL-LI-0003",
+      "title": "Only put necessary files",
+      "level": "INFO",
+      "alerts": [
+        "unnecessary file : app/Dockerfile "
+      ]
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+
+Testing rep-vol...
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: CVE-2023-26604
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SYSTEMD-3339226
+  Introduced through: systemd/libsystemd0@245.4-4ubuntu3.20, apt@2.0.9, procps/libprocps8@2:3.3.16-1ubuntu2.3, util-linux/bsdutils@1:2.34-0.1ubuntu9.3, util-linux/mount@2.34-0.1ubuntu9.3, systemd/libudev1@245.4-4ubuntu3.20
+  From: systemd/libsystemd0@245.4-4ubuntu3.20
+  From: apt@2.0.9 > systemd/libsystemd0@245.4-4ubuntu3.20
+  From: procps/libprocps8@2:3.3.16-1ubuntu2.3 > systemd/libsystemd0@245.4-4ubuntu3.20
+  and 6 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Arbitrary Code Injection
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SHADOW-5425687
+  Introduced through: shadow/passwd@1:4.8.1-1ubuntu5.20.04.4, adduser@3.118ubuntu2, shadow/login@1:4.8.1-1ubuntu5.20.04.4, util-linux/mount@2.34-0.1ubuntu9.3
+  From: shadow/passwd@1:4.8.1-1ubuntu5.20.04.4
+  From: adduser@3.118ubuntu2 > shadow/passwd@1:4.8.1-1ubuntu5.20.04.4
+  From: shadow/login@1:4.8.1-1ubuntu5.20.04.4
+  and 1 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Time-of-check Time-of-use (TOCTOU)
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-SHADOW-577863
+  Introduced through: shadow/passwd@1:4.8.1-1ubuntu5.20.04.4, adduser@3.118ubuntu2, shadow/login@1:4.8.1-1ubuntu5.20.04.4, util-linux/mount@2.34-0.1ubuntu9.3
+  From: shadow/passwd@1:4.8.1-1ubuntu5.20.04.4
+  From: adduser@3.118ubuntu2 > shadow/passwd@1:4.8.1-1ubuntu5.20.04.4
+  From: shadow/login@1:4.8.1-1ubuntu5.20.04.4
+  and 1 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in pcre3/libpcre3
+  Description: Uncontrolled Recursion
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-PCRE3-580031
+  Introduced through: pcre3/libpcre3@2:8.39-12ubuntu0.1, grep@3.4-1
+  From: pcre3/libpcre3@2:8.39-12ubuntu0.1
+  From: grep@3.4-1 > pcre3/libpcre3@2:8.39-12ubuntu0.1
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in ncurses/libtinfo6
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-NCURSES-1656318
+  Introduced through: ncurses/libtinfo6@6.2-0ubuntu2, bash@5.0-6ubuntu1.2, ncurses/libncurses6@6.2-0ubuntu2, ncurses/ncurses-bin@6.2-0ubuntu2, procps@2:3.3.16-1ubuntu2.3, util-linux/fdisk@2.34-0.1ubuntu9.3, util-linux/mount@2.34-0.1ubuntu9.3, ncurses/libncursesw6@6.2-0ubuntu2, ncurses/ncurses-base@6.2-0ubuntu2
+  From: ncurses/libtinfo6@6.2-0ubuntu2
+  From: bash@5.0-6ubuntu1.2 > ncurses/libtinfo6@6.2-0ubuntu2
+  From: ncurses/libncurses6@6.2-0ubuntu2 > ncurses/libtinfo6@6.2-0ubuntu2
+  and 12 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in ncurses/libtinfo6
+  Description: Out-of-bounds Read
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-NCURSES-2770341
+  Introduced through: ncurses/libtinfo6@6.2-0ubuntu2, bash@5.0-6ubuntu1.2, ncurses/libncurses6@6.2-0ubuntu2, ncurses/ncurses-bin@6.2-0ubuntu2, procps@2:3.3.16-1ubuntu2.3, util-linux/fdisk@2.34-0.1ubuntu9.3, util-linux/mount@2.34-0.1ubuntu9.3, ncurses/libncursesw6@6.2-0ubuntu2, ncurses/ncurses-base@6.2-0ubuntu2
+  From: ncurses/libtinfo6@6.2-0ubuntu2
+  From: bash@5.0-6ubuntu1.2 > ncurses/libtinfo6@6.2-0ubuntu2
+  From: ncurses/libncurses6@6.2-0ubuntu2 > ncurses/libtinfo6@6.2-0ubuntu2
+  and 12 more...
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in libpng1.6/libpng16-16
+  Description: NULL Pointer Dereference
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-LIBPNG16-3124878
+  Introduced through: optipng@0.7.7-1
+  From: optipng@0.7.7-1 > libpng1.6/libpng16-16@1.6.37-2
+  Image layer: 'apt-get install --no-install-recommends -y jpegoptim optipng zip'
+
+✗ Low severity vulnerability found in libjpeg-turbo/libjpeg-turbo8
+  Description: Out-of-bounds Read
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-LIBJPEGTURBO-2940684
+  Introduced through: jpegoptim@1.4.6-1
+  From: jpegoptim@1.4.6-1 > libjpeg8-empty/libjpeg8@8c-2ubuntu8 > libjpeg-turbo/libjpeg-turbo8@2.0.3-0ubuntu1.20.04.3
+  Image layer: 'apt-get install --no-install-recommends -y jpegoptim optipng zip'
+
+✗ Low severity vulnerability found in gnupg2/gpgv
+  Description: Out-of-bounds Write
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-GNUPG2-3035407
+  Introduced through: gnupg2/gpgv@2.2.19-3ubuntu2.2, apt@2.0.9
+  From: gnupg2/gpgv@2.2.19-3ubuntu2.2
+  From: apt@2.0.9 > gnupg2/gpgv@2.2.19-3ubuntu2.2
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Use After Free
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-GLIBC-1297554
+  Introduced through: glibc/libc-bin@2.31-0ubuntu9.9, meta-common-packages@meta
+  From: glibc/libc-bin@2.31-0ubuntu9.9
+  From: meta-common-packages@meta > glibc/libc6@2.31-0ubuntu9.9
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Allocation of Resources Without Limits or Throttling
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-GLIBC-2415100
+  Introduced through: glibc/libc-bin@2.31-0ubuntu9.9, meta-common-packages@meta
+  From: glibc/libc-bin@2.31-0ubuntu9.9
+  From: meta-common-packages@meta > glibc/libc6@2.31-0ubuntu9.9
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+✗ Low severity vulnerability found in coreutils
+  Description: Improper Input Validation
+  Info: https://security.snyk.io/vuln/SNYK-UBUNTU2004-COREUTILS-583876
+  Introduced through: coreutils@8.30-3ubuntu2
+  From: coreutils@8.30-3ubuntu2
+  Image layer: Introduced by your base image (ubuntu:20.04)
+
+
+
+Organization:      vitaleantonio
+Package manager:   deb
+Target file:       /home/visha/Universita/Magistrale/I_Anno/II_semestre/Software_Security_II/Project/Application/Practice/docker_attacks/Attacks_replication/Volume_attack/Dockerfile
+Project name:      docker-image|rep-vol
+Docker image:      rep-vol
+Platform:          linux/amd64
+Base image:        ubuntu:20.04
+Licenses:          enabled
+
+Tested 99 dependencies for known issues, found 12 issues.
+
+Your base image is out of date
+1) Pull the latest version of your base image by running 'docker pull ubuntu:20.04'
+2) Rebuild your local image
+
+Pro tip: use `--exclude-base-image-vulns` to exclude from display Docker base image vulnerabilities.
+
+Snyk found some vulnerabilities in your image applications (Snyk searches for these vulnerabilities by default). See https://snyk.co/app-vulns for more information.
+
+To remove these messages in the future, please run `snyk config set disableSuggestions=true`
+
+Learn more: https://docs.snyk.io/products/snyk-container/getting-around-the-snyk-container-ui/base-image-detection
+
+
