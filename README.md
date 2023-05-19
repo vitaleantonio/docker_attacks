@@ -20,9 +20,9 @@ A simple web server that allows the execution of some attacks, found in [simple_
 
 ## Analysis results 
 
-Attraverso l'utilizzo dei tool elencati di seguito, sono state effettuate delle analisi di sicurezza sui docker container creati, per verificare se essi riescono a individuare la presenza di script malevoli inseriti. I risultati sono consultabili in [analysis_results](https://github.com/vitaleantonio/docker_attacks/tree/main/analysis_results).
+Through the use of the tools listed below, security analysis was performed on the created docker containers to see if they can detect the presence of inserted malicious scripts. The results can be found in [analysis_results](https://github.com/vitaleantonio/docker_attacks/tree/main/analysis_results).
 
-I tool utilizzati sono:
+The tools used are:
 
 - [Snyk](https://snyk.io)
 - [Trivy](https://trivy.dev)
